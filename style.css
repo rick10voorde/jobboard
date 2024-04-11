@@ -1,0 +1,589 @@
+/* Import Poppins Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-dark-blue); /* Zwarte achtergrond */
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #50727b; /* Navy groen */
+    font-weight: 600; /* Semi-bold for logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative; /* Voor dropdown */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #003d66; /* Veranderd naar #003d66 */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #344955; /* Donkerder navy groen */
+}
+
+/* Styles voor de Registreren knop */
+.register-btn {
+    background-color: #005a9c; /* Blauwe achtergrond */
+    color: #fff !important; /* Witte tekst, forceren met !important */
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Gladde kleurovergang */
+}
+
+.register-btn:hover {
+    background-color: #003d66; /* Donkerdere blauwe achtergrond bij hover */
+    color: #fff !important; /* Witte tekst blijft behouden bij hover */
+}
+
+/* Dropdown Menu Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Stijlen voor het tonen van dropdown-menu */
+.show-dropdown {
+    display: block;
+}
+
+/* Header Content */
+.header-content {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #000000, #003d66); /* Zwart naar navy green gradiënt */
+    color: #fff; /* Witte tekst */
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+}
+
+/* Search Section */
+.advanced-search-container {
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.advanced-search-container h3 {
+    margin-bottom: 15px;
+}
+
+.search-form {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: auto;
+}
+
+.search-form input[type="text"], .search-form select {
+    width: 200px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    background-color: #003d66; /* Veranderd naar #003d66 */
+    color: #fff; /* Veranderd naar wit */
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #002944; /* Donkerdere navy groen bij hover */
+}
+
+/* Job Board Section */
+.jobboard {
+    background-color: #ffffff;
+    padding: 40px 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.flag-icon {
+    display: block; /* Maak de vlag een blokelement */
+    margin: 0 auto 10px; /* Centreren en ruimte onder de vlag toevoegen */
+    text-align: center; /* Centreren */
+}
+
+.job-listings, .featured-job-listings {
+    display: grid;
+    grid-gap: 20px;
+}
+
+
+.job-listings {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.featured-job-listings {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.job, .featured-job {
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Voeg transition toe */
+}
+
+.job:hover, .featured-job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Dezelfde hover effecten als bij uitgelichte vacatures */
+}
+
+.job {
+    min-height: 300px;
+}
+
+.featured-job {
+    background-color: #f2f2f2; /* Subtiele lichtblauwe achtergrond */
+    min-height: 350px; /* Grotere hoogte voor uitgelichte vacatures */
+    border: 2px solid #003d66; /* Gouden rand */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* ... Overige stijlen ... */
+}
+
+.featured-job:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.featured-job .apply-btn {
+    background-color: #003d66; /* Blauwe achtergrond */
+    color: #fff; /* Witte tekst */
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.featured-job .apply-btn:hover,
+.featured-job .apply-btn:hover,
+.featured-job .apply-btn:hover {
+    background-color: #002944 !important; /* Donkerdere blauw voor hover */
+}
+
+.job-title, .job-description, .job-bounty {
+    text-align: center;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 60px;
+}
+
+.job-description {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.job-bounty {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.register-btn, .apply-btn, .register-btn:hover, .apply-btn:hover {
+    background-color: #003d66; /* Veranderd naar #003d66 */
+    color: #fff; /* Witte tekst */
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn {
+    background-color: #ff9800; /* Veranderd naar #003d66 */
+    color: #fff;
+    padding: 8px 12px;
+    width: 50%;
+    margin: 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: #f57c00 !important;
+}
+
+.register-btn:hover, .apply-btn:hover {
+    background-color: #002944; /* Donkerdere kleur bij hover */
+}
+
+@media screen and (max-width: 768px) {
+    .job-listings, .featured-job-listings {
+        grid-template-columns: 1fr;
+    }
+}
+
+.show-all-btn-container {
+    text-align: center;
+    margin-top: -40px;
+}
+
+.show-all-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ff9800; 
+    color: #fff; /* Witte tekst */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Voeg transform toe */
+}
+
+.show-all-btn:hover {
+    background-color: #f57c00 !important;
+    transform: translateY(-3px); /* Voeg verticale beweging toe */
+}
+
+
+
+/* About Us Section */
+.about-us-section {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.about-us-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.about-us-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #005a9c;
+}
+
+.about-us-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #50727b; /* Navy groen */
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.learn-more-btn:hover {
+    background-color: #344955; /* Donkerdere navy groen bij hover */
+}
+
+
+/* Reviews Section */
+.reviews-section {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+
+.reviews-slider {
+    display: flex;
+    overflow-x: hidden; /* Verbergt de horizontale schuifbalk */
+    scroll-behavior: smooth;
+    padding: 0 30px; /* Behoud ruimte voor de pijlen */
+    /* ... andere bestaande stijlen ... */
+}
+
+.review {
+    min-width: 400px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border: 1px solid #ff9800; /* Voegt een subtiele gouden lijn toe */
+}
+
+.review-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.reviewer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.stars {
+    color: #ff9800;
+    font-size: 1.2rem;
+}
+
+/* Stijlen voor navigatiepijltjes */
+.review-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    cursor: pointer;
+    color: #50727b; /* Kleur van de pijl */
+    font-size: 24px; /* Grootte van de pijl */
+    transform: translateY(-50%); /* Centreert pijltjes verticaal */
+    background: none; /* Geen achtergrond */
+    border: none; /* Geen rand */
+    padding: 0; /* Geen padding */
+    width: auto; /* Breedte automatisch */
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: -10px;
+}
+
+.review-arrow:hover {
+    color: #344955; /* Donkerdere kleur bij hover */
+}
+
+/* Optioneel: Voeg een afbeelding of avatar toe voor elke reviewer */
+.reviewer-img {
+    width: 50px; /* Pas de grootte aan */
+    height: 50px; /* Pas de grootte aan */
+    border-radius: 50%; /* Maakt het rond */
+    margin-right: 10px;
+    /* Voeg meer stijlen toe indien nodig */
+}
+
+
+/* Email Subscription Section */
+.email-subscription {
+    background-color: #f8f8f8; /* Lichtgrijze achtergrond */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtiele schaduw behouden */
+}
+
+.email-subscription .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.email-subscription h2 {
+    font-size: 1.8rem;
+    color: #005a9c;
+    margin-bottom: 15px;
+}
+
+.email-subscription p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.subscription-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subscription-form input[type="email"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+}
+
+.subscription-form button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #003d66; /* Veranderd naar #003d66 */
+    color: #fff; /* Veranderd naar wit */
+    cursor: pointer;
+}
+
+.subscription-form button:hover {
+    background-color: #002944; /* Donkerdere navy groen bij hover */
+}
+
+@media screen and (max-width: 768px) {
+    .subscription-form {
+        flex-direction: column;
+    }
+
+    .subscription-form input[type="email"], 
+    .subscription-form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+/* Footer Section */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.site-footer h3 {
+    margin-bottom: 10px;
+}
+
+.site-footer p, .site-footer ul, .site-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px;
+}
+
+.footer-links ul li a:hover,
+.footer-social a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-footer div {
+        margin-bottom: 20px;
+    }
+}

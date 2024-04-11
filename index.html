@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelerscontracten Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">YourLogo</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Log In</a></li>
+                <li class="dropdown">
+                    <a href="#" class="register-btn">Register</a>
+                    <div class="dropdown-content">
+                        <a href="#">As Club</a>
+                        <a href="#">As Agent</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <h1>Connecting Clubs and Agents for Unmatched Football Opportunities</h1>
+            <p>Explore, Connect, and Score in the World of Professional Football</p>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdown = document.querySelector('.dropdown');
+            var dropdownContent = document.querySelector('.dropdown-content');
+
+            dropdown.addEventListener('click', function(event) {
+                event.stopPropagation();
+                dropdownContent.classList.toggle('show-dropdown');
+            });
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.register-btn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show-dropdown')) {
+                            openDropdown.classList.remove('show-dropdown');
+                        }
+                    }
+                }
+            };
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- search -->
+
+<div class="advanced-search-container">
+    <h3>Advanced Search</h3>
+    <form class="search-form">
+        <input type="text" placeholder="Search by job title, keywords..." aria-label="Search Jobs">
+        
+        <!-- Selectie voor Competities -->
+        <select aria-label="Select Competition">
+            <option value="">Select Competition</option>
+            <option value="premier-league">England - Premier League</option>
+            <option value="championship">England - Championship</option>
+            <option value="bundesliga">Germany - Bundesliga</option>
+            <option value="2-bundesliga">Germany - 2. Bundesliga</option>
+            <option value="la-liga">Spain - La Liga</option>
+            <option value="segunda-division">Spain - Segunda División</option>
+            <option value="ligue-1">France - Ligue 1</option>
+            <option value="ligue-2">France - Ligue 2</option>
+            <option value="eredivisie">Netherlands - Eredivisie</option>
+            <option value="eerste-divisie">Netherlands - Eerste Divisie</option>
+            <!-- Andere competities kunnen worden toegevoegd -->
+        </select>
+
+        <!-- Selectie voor Posities -->
+        <select aria-label="Select Position">
+            <option value="">Select Position</option>
+            <option value="forward">Forward</option>
+            <option value="midfielder">Midfielder</option>
+            <option value="defender">Defender</option>
+            <option value="goalkeeper">Goalkeeper</option>
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+
+<!-- Featured Job Postings -->
+<section class="featured-jobboard">
+    <div class="container">
+        <h2 class="section-title">Featured Opportunities</h2>
+
+        <div class="featured-job-listings">
+<!-- Featured Vacature 1 -->
+<div class="job featured-job">
+    <div class="job-details">
+        <div class="flag-title-container">
+            <span class="flag-icon"><img src="images/us.png" alt="US Flag" width="40" height="40"></span>
+            <h3 class="job-title">Head Coach for Major League Club</h3>
+        </div>
+        <p class="job-description">An elite club seeks a visionary Head Coach to lead our team to victory.</p>
+    </div>
+    <div class="job-bounty">
+        <span>Bounty: $15,000</span>
+        <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+</div>
+
+            <!-- Featured Vacature 2 -->
+            <div class="job featured-job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/germany.png" alt="Germany Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Sports Scientist for Pro Football Team</h3>
+                    <p class="job-description">Innovative sports scientist required to enhance player performance and well-being.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $12,000</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Job Postings -->
+
+<section class="jobboard">
+    <div class="container">
+        <h2 class="section-title">All Football Opportunities</h2>
+        <p class="section-description">Discover Top Football Talent and Unique Career Opportunities Worldwide</p>
+        <div class="job-listings">
+            <!-- Vacature 1: Engeland -->
+            <div class="job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/united-kingdom.png" alt="UK Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Defender for Premier League Club</h3>
+                    <p class="job-description">Seeking an experienced defender with strong tactical awareness. Based in England.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $4,000</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Vacature 2: Duitsland -->
+            <div class="job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/germany.png" alt="Germany Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Goalkeeper for Bundesliga Team</h3>
+                    <p class="job-description">Looking for a skilled goalkeeper to join our German top league team.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $3,500</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Vacature 3: Spanje -->
+            <div class="job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/spain.png" alt="Spain Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Winger for La Liga Club</h3>
+                    <p class="job-description">Dynamic winger needed for a top Spanish club, with excellent dribbling skills.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $5,000</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Vacature 4: Frankrijk -->
+            <div class="job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/france.png" alt="France Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Striker for Ligue 1 Club</h3>
+                    <p class="job-description">French club looking for a striker with proven scoring record in top leagues.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $4,500</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Vacature 5: Nederland -->
+            <div class="job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/netherlands.png" alt="Netherlands Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Midfielder for Eredivisie Team</h3>
+                    <p class="job-description">Creative midfielder wanted for a top Dutch team, strong passing skills required.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $3,000</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+
+            <!-- Vacature 6: Italië -->
+            <div class="job">
+                <div class="job-details">
+                    <span class="flag-icon"><img src="images/italy.png" alt="Italy Flag" width="40" height="40"></span>
+                    <h3 class="job-title">Full-back for Serie A Club</h3>
+                    <p class="job-description">Italian top club seeks a full-back with great defensive skills and pace.</p>
+                </div>
+                <div class="job-bounty">
+                    <span>Bounty: $3,800</span>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="jobboard">
+    <!-- Bestaande vacature elementen -->
+
+    <!-- 'Show All' Knop -->
+    <div class="show-all-btn-container">
+        <a href="path-to-all-jobs.html" class="show-all-btn">Show All Jobs</a>
+    </div>
+</section>
+
+
+<!--about us-->
+
+<section class="about-us-section">
+    <div class="container">
+        <h2>About Our Platform</h2>
+        <p>Welcome to the premier destination for connecting clubs with top talent. Our platform is designed to streamline the process of finding the perfect match in the world of sports. Discover how we empower clubs and agents to make impactful decisions.</p>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Reviews Section -->
+
+<section class="reviews-section">
+    <div class="container">
+        <div class="review-arrow left-arrow">&lt;</div>
+        <div class="review-arrow right-arrow">&gt;</div>
+<div class="reviews-slider">
+            <!-- Review 1 -->
+            <div class="review">
+                <p class="review-text">"Een geweldige ervaring! Het platform is gebruiksvriendelijk en effectief."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Jan de Vries</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="review">
+                <p class="review-text">"Dit platform heeft ons geholpen de perfecte kandidaten te vinden. Een must-have voor elke club."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Sara Zonneveld</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="review">
+                <p class="review-text">"Fantastisch platform dat het hele proces van scouting en werving vereenvoudigt!"</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Lars Jansen</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 4 -->
+            <div class="review">
+                <p class="review-text">"Als agent vind ik dit platform onmisbaar voor mijn dagelijkse werk."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Anna de Vries</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 5 -->
+            <div class="review">
+                <p class="review-text">"Snelle communicatie en betrouwbare tool voor het vinden van talent."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Sophie Meijer</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 6 -->
+            <div class="review">
+                <p class="review-text">"Zeer efficiënt bij het verbinden met nieuwe clubs, makkelijk in gebruik."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">David Groen</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 7 -->
+            <div class="review">
+                <p class="review-text">"Uitstekende bron voor marktinformatie en netwerkmogelijkheden."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Lisa van Dijk</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 8 -->
+            <div class="review">
+                <p class="review-text">"Heeft ons geholpen bij het vinden van verborgen talenten over de hele wereld."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Mohamed El Bouazzaoui</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 9 -->
+            <div class="review">
+                <p class="review-text">"Uiterst waardevol voor het opbouwen van nieuwe zakelijke relaties."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Emma Bosch</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </div>
+                </div>
+            </div>
+            <!-- Review 10 -->
+            <div class="review">
+                <p class="review-text">"Een doorbraak in de manier waarop wij spelers scouten en contracteren."</p>
+                <div class="reviewer">
+                    <span class="reviewer-name">Kevin de Bruin</span>
+                    <div class="stars">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--email-sub-->
+
+<section class="email-subscription">
+    <div class="container">
+        <h2>Stay Updated with New Job Postings</h2>
+        <p>Subscribe to our newsletter and be the first to know about new opportunities.</p>
+        <form class="subscription-form">
+            <input type="email" placeholder="Enter your email address" aria-label="Email Address">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+
+<!--footer-->
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: info@example.com</p>
+            <p>Phone: +123 456 7890</p>
+        </div>
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+</footer>
